@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <title>ตัวอย่างที่ 18</title>  
+</head>  
+<body>  
+    <div id="example18">  
+        <h3>18. ค้นหาและกรองข้อมูล</h3>  
+        <input  
+            type="text"  
+            id="searchInput"  
+            onkeyup="searchItems()"  
+            placeholder="ค้นหา..."  
+        />  
+        <ul id="itemList">  
+            <li>แอปเปิ้ล</li>  
+            <li>กล้วย</li>  
+            <li>ส้ม</li>  
+            <li>มะม่วง</li>  
+            <li>สตรอเบอร์รี่</li>  
+        </ul>  
+        <script>  
+            // ฟังก์ชันค้นหาข้อมูล  
+            function searchItems() {  
+                // รับค่าค้นหา  
+                const searchText = document  
+                    .getElementById("searchInput")  
+                    .value.toLowerCase();  
+                // รับรายการทั้งหมด  
+                const items = document  
+                    .getElementById("itemList")  
+                    .getElementsByTagName("li");  
+                // วนลูปตรวจสอบแต่ละรายการ  
+                for (let item of items) {  
+                    const text = item.textContent.toLowerCase();  
+                    // ซ่อน/แสดงรายการตามผลการค้นหา  
+                    item.style.display = text.includes(searchText) ? "" : "none";  
+                }  
+            }  
+        </script>  
+    </div>  
+</body>  
+</html>

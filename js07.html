@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ตัวอย่างที่ 7</title>
+  </head>
+  <body>
+    <h3>ข้อมูลนักเรียน</h3>
+    <button onclick="showStudentInfo()">แสดงข้อมูล</button>
+    <div id="studentInfo"></div>
+
+    <script>
+      // สร้าง object เก็บข้อมูลนักเรียน
+      const student = {
+        name: "สมชาย ใจดี",
+        age: 15,
+        grade: "ม.3",
+        scores: {
+          math: 85,
+          science: 92,
+          english: 78,
+        },
+      };
+
+      function showStudentInfo() {
+        let info = document.getElementById("studentInfo");
+        info. innerHTML = `
+                ชื่อ: ${student.name}<br>
+                อายุ: ${student.age}<br>
+                ระดับชั้น: ${student.grade}<br>
+                คะแนน :<br>
+                - คณิตศาสตร์: ${student.scores.math}<br>
+                - วิทยาศาสตร์: ${student.scores.science}<br>
+                - ภาษาอังกฤษ: ${student.scores.english}
+            `;
+        }
+      </script>
+  </body>
+</html>
