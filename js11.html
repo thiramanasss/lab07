@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ตัวอย่างที่ 11</title>
+    </head>
+    <body>
+        <div id="example11">
+            <h3>11. ปุ่มเปลี่ยนสี</h3>
+            <button onclick="changeColor()">เปลี่ยนสี</button>
+            <div id="colorBox" class="color-box"></div>
+
+    <style>
+        .color-box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        // สร้างฟังก์ชันสุ่มสี RGB
+        function getRandomColor() {
+            // สุ่มค่าสี RGB แต่ละช่องระหว่าง 0-255
+            const r = Math. floor(Math.random() * 256);
+            const g = Math. floor(Math.random() * 256);
+            const b = Math. floor(Math.random() * 256);
+            // ส่งคืนค่าสีในรูปแบบ rgb(r,g,b)
+            return `rgb(${r}, ${g}, ${b})`;
+
+        }
+
+    // ฟังก์ชันเปลี่ยนสึกล่อง
+    function changeColor() {
+        // หากล่องสีจาก ID
+        const box = document.getElementById("colorBox");
+        // เปลี่ยนสีพื้นหลังเป็นสีสุ่ม
+        box.style.backgroundColor = getRandomColor();
+    }
+    </script>
+    </div>
+  </body>
+</html>

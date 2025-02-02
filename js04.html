@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ตัวอย่างที่ 4</title>
+  </head>
+  <body>
+    <h3>รายการสินค้า</h3>
+    <button onclick="showProducts()">แสดงรายการสินค้า</button>
+    <ul id="productList"></ul>
+
+    <script>
+      function showProducts() {
+        // สร้าง array เก็บรายการสินค้า
+        const products = ["แอปเปิ้ล", "กล้วย", "ส้ม", "มะม่วง"];
+        let productList = document.getElementById("productList");
+        productList.innerHTML = ""; // ล้างรายการเดิม
+
+        // วนลูปแสดงรายการสินค้า
+        for (let i = 0; i < products.length; i++) {
+          let li = document.createElement("li");
+          li. textContent = products[i];
+          productList.appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</htm1>

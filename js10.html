@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ตัวอย่างที่ 10</title>
+    <style>
+        #gameArea {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        position: relative;
+        }
+        #target {
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        position: absolute;
+        cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <h3>เกมดลิกเป้าหมาย</h3>
+    <p>คะแนน: <span id="score">0</span></p>
+    <div id="gameArea">
+        <div id="target" onclick="hitTarget()"></div>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function hitTarget() {
+            // เพิ่มตะแนน
+            score++;
+            document.getElementById("score").textContent = score;
+
+            // สุ่มตำแหน่งใหม่
+            let gameArea = document.getElementById("gameArea");
+            let target = document.getElementById("target");
+
+            let maxX = gameArea.offsetWidth - target.offsetWidth;
+            let maxY = gameArea.offsetHeight - target.offsetHeight;
+
+            let newX = Math.floor(Math.random() * maxX);
+            let newY = Math.floor(Math.random() * maxY);
+
+            target.style.left = newX + "px";
+            target.style.top = newY + "px";
+        }
+    </script>  
+<!--
+TODO : 
+- ปุ่ม Start
+- เมื่อคลิกปุ่ม start จับเวลาถอยหลัง 30 วินาที และ ปุ่ม Start หายไป
+- เมื่อเวลาหมด ให้แสดง Game over และมีปุ่ม Start พร้อมทั้ง reset คะแนน 
+-->
